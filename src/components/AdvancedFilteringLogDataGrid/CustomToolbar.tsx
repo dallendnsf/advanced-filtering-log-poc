@@ -1,6 +1,5 @@
-import { Chip, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import {
-  GridFilterModel,
   GridSlotsComponentsProps,
   GridToolbarColumnsButton,
   GridToolbarContainer,
@@ -9,10 +8,11 @@ import {
   GridToolbarFilterButton,
   GridToolbarQuickFilter,
 } from "@mui/x-data-grid-pro";
+import FilterChipsBar from "./FilterChipsBar";
 
 // declare module "@mui/x-data-grid-pro" {
 //   interface ToolbarPropsOverrides {
-//     queryOptions?: { filterModel: GridFilterModel };
+//     queryOptions: { filterModel: GridFilterModel } | undefined;
 //   }
 // }
 
@@ -22,8 +22,8 @@ export default function CustomToolbar(
   props: NonNullable<GridSlotsComponentsProps["toolbar"]>
 ) {
   const { queryOptions } = props;
-  console.log("query options", queryOptions);
-  console.log("items", queryOptions?.filterModel?.items);
+  // console.log("query options", queryOptions);
+  // console.log("items", queryOptions?.filterModel?.items);
   return (
     <GridToolbarContainer sx={{ p: 1 }}>
       <Grid container justifyContent="space-between">
@@ -37,34 +37,7 @@ export default function CustomToolbar(
           <GridToolbarQuickFilter variant="outlined" size="small" fullWidth />
         </Grid>
       </Grid>
-      <Grid container>
-        <Grid item>
-          {queryOptions.filterModel?.quickFilterValues ? (
-            <Chip
-              label={`Quick Filter: ${queryOptions.filterModel?.quickFilterValues}`}
-            />
-          ) : (
-            ""
-          )}
-          {queryOptions.filterModel?.items.map(
-            (
-              item: {
-                field: string;
-                operator: string;
-                value: string | number | Date;
-              },
-              index: number
-            ) => {
-              return (
-                <Chip
-                  key={`filter_chip_${item.field}_${index}`}
-                  label={`${item.field}: ${item.value}`}
-                />
-              );
-            }
-          )}
-        </Grid>
-      </Grid>
+      <FilterChipsBar filterModel={queryOptions?.filterModel} />
     </GridToolbarContainer>
   );
 }
