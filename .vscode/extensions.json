@@ -1,0 +1,32 @@
+{
+  "recommendations": [
+    "pkief.material-icon-theme",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "christian-kohler.path-intellisense",
+    "graphql.vscode-graphql",
+    "prisma.prisma",
+    "csstools.postcss",
+    "bradlc.vscode-tailwindcss",
+    "pflannery.vscode-versionlens",
+    "svelte.svelte-vscode",
+    "visualstudioexptteam.vscodeintellicode",
+    "yzhang.markdown-all-in-one",
+    "davidanson.vscode-markdownlint",
+    "mikestead.dotenv",
+    "akamud.vscode-theme-onedark",
+    "github.copilot",
+    "rangav.vscode-thunder-client",
+    "ms-azuretools.vscode-docker",
+    "aaron-bond.better-comments",
+    "quicktype.quicktype",
+    "github.vscode-pull-request-github",
+    "ardenivanov.svelte-intellisense",
+    "fivethree.vscode-svelte-snippets",
+    "uniquevision.vscode-plpgsql-lsp",
+    "bradymholt.pgformatter",
+    "ms-vscode-remote.remote-containers",
+    "tamasfe.even-better-toml"
+  ]
+}
