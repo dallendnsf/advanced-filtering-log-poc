@@ -25,6 +25,7 @@ export default function FilterChipsBar({
               sx={{ mr: 1 }}
               size="small"
               variant="outlined"
+              color="primary"
             />
           ) : (
             ""
@@ -39,6 +40,7 @@ export default function FilterChipsBar({
                 sx={{ mr: 1 }}
                 size="small"
                 variant="outlined"
+                color="secondary"
               />
             );
           })}
