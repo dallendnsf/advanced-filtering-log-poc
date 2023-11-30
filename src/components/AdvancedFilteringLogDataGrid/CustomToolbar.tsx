@@ -7,6 +7,7 @@ import {
   GridToolbarExport,
   GridToolbarFilterButton,
   GridToolbarQuickFilter,
+  useGridApiContext,
 } from "@mui/x-data-grid-pro";
 import FilterChipsBar from "./FilterChipsBar";
 
@@ -22,6 +23,7 @@ export default function CustomToolbar(
   props: NonNullable<GridSlotsComponentsProps["toolbar"]>
 ) {
   const { queryOptions } = props;
+  const apiRef = useGridApiContext();
   // console.log("query options", queryOptions);
   // console.log("items", queryOptions?.filterModel?.items);
   return (
@@ -37,7 +39,10 @@ export default function CustomToolbar(
           <GridToolbarQuickFilter variant="outlined" size="small" fullWidth />
         </Grid>
       </Grid>
-      <FilterChipsBar filterModel={queryOptions?.filterModel} />
+      <FilterChipsBar
+        filterModel={queryOptions?.filterModel}
+        deleteFilterItem={apiRef.current.deleteFilterItem}
+      />
     </GridToolbarContainer>
   );
 }

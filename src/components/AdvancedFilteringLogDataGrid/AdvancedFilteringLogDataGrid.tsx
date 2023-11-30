@@ -24,7 +24,6 @@ export default function AdvancedFilteringLogDataGrid({ logs }: Props) {
     left: ["time"],
     right: [],
   });
-  const [queryOptions, setQueryOptions] = React.useState({});
 
   // set initial sorting config
   const initialSort: GridSortModel = [{ field: "time", sort: "desc" }];
@@ -34,6 +33,9 @@ export default function AdvancedFilteringLogDataGrid({ logs }: Props) {
     items: [{ field: "result", operator: "is", value: "Blocked" }],
   };
 
+  const [queryOptions, setQueryOptions] = React.useState({
+    filterModel: initialFilters,
+  });
   const onFilterChange = React.useCallback((filterModel: GridFilterModel) => {
     setQueryOptions({ filterModel: { ...filterModel } });
   }, []);
@@ -79,7 +81,7 @@ export default function AdvancedFilteringLogDataGrid({ logs }: Props) {
         }}
         slotProps={{
           toolbar: {
-            queryOptions: queryOptions,
+            queryOptions,
           },
         }}
         getRowClassName={(

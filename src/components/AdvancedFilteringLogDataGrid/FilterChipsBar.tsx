@@ -4,28 +4,32 @@ import { columns } from "./columns";
 
 type Props = {
   filterModel?: GridFilterModel;
+  deleteFilterItem: (item: GridFilterItem) => void;
 };
 
-export default function FilterChipsBar({ filterModel }: Props) {
+export default function FilterChipsBar({
+  filterModel,
+  deleteFilterItem,
+}: Props) {
   return (
     <Grid container>
       <Grid item>
-        {filterModel?.quickFilterValues ? (
+        {filterModel?.quickFilterValues &&
+        filterModel?.quickFilterValues.length > 0 ? (
           <Chip
-            label={`Quick Filter: ${filterModel?.quickFilterValues}`}
+            label={`Quick Filter: ${filterModel?.quickFilterValues[0]}`}
             sx={{ mr: 1 }}
           />
         ) : (
           ""
         )}
         {filterModel?.items.map((item: GridFilterItem, index: number) => {
+          console.log(item);
           return (
             <Chip
               key={`filter_chip_${item.field}_${index}`}
               label={getChipLabel(item)}
-              onDelete={() => {
-                console.log("Delete Me");
-              }}
+              onDelete={() => deleteFilterItem(item)}
               sx={{ mr: 1 }}
             />
           );
