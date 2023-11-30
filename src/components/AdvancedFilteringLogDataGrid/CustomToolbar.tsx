@@ -28,7 +28,7 @@ export default function CustomToolbar(
   // console.log("items", queryOptions?.filterModel?.items);
   return (
     <GridToolbarContainer sx={{ p: 1 }}>
-      <Grid container justifyContent="space-between">
+      <Grid container justifyContent="space-between" alignItems="center">
         <Grid item>
           <GridToolbarColumnsButton sx={TOOLBAR_BUTTON_STYLE} />
           <GridToolbarFilterButton sx={TOOLBAR_BUTTON_STYLE} />
@@ -42,6 +42,7 @@ export default function CustomToolbar(
       <FilterChipsBar
         filterModel={queryOptions?.filterModel}
         deleteFilterItem={apiRef.current.deleteFilterItem}
+        setQuickFilterValues={apiRef.current.setQuickFilterValues}
       />
     </GridToolbarContainer>
   );

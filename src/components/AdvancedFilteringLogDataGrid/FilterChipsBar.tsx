@@ -5,38 +5,47 @@ import { columns } from "./columns";
 type Props = {
   filterModel?: GridFilterModel;
   deleteFilterItem: (item: GridFilterItem) => void;
+  setQuickFilterValues: (values: any[]) => void;
 };
 
 export default function FilterChipsBar({
   filterModel,
   deleteFilterItem,
+  setQuickFilterValues,
 }: Props) {
-  return (
-    <Grid container>
-      <Grid item>
-        {filterModel?.quickFilterValues &&
-        filterModel?.quickFilterValues.length > 0 ? (
-          <Chip
-            label={`Quick Filter: ${filterModel?.quickFilterValues[0]}`}
-            sx={{ mr: 1 }}
-          />
-        ) : (
-          ""
-        )}
-        {filterModel?.items.map((item: GridFilterItem, index: number) => {
-          console.log(item);
-          return (
+  if (filterModel && filterModel.items) {
+    return (
+      <Grid container alignItems="center">
+        <Grid item>
+          {filterModel?.quickFilterValues &&
+          filterModel?.quickFilterValues.length > 0 ? (
             <Chip
-              key={`filter_chip_${item.field}_${index}`}
-              label={getChipLabel(item)}
-              onDelete={() => deleteFilterItem(item)}
+              label={`Quick Filter: ${filterModel?.quickFilterValues[0]}`}
+              onDelete={() => setQuickFilterValues([])}
               sx={{ mr: 1 }}
+              size="small"
+              variant="outlined"
             />
-          );
-        })}
+          ) : (
+            ""
+          )}
+          {filterModel?.items.map((item: GridFilterItem, index: number) => {
+            console.log(item);
+            return (
+              <Chip
+                key={`filter_chip_${item.field}_${index}`}
+                label={getChipLabel(item)}
+                onDelete={() => deleteFilterItem(item)}
+                sx={{ mr: 1 }}
+                size="small"
+                variant="outlined"
+              />
+            );
+          })}
+        </Grid>
       </Grid>
-    </Grid>
-  );
+    );
+  }
 }
 
 function getChipLabel(item: GridFilterItem) {
