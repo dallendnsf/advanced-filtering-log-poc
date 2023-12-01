@@ -2,7 +2,7 @@ import * as React from "react";
 import Popover from "@mui/material/Popover";
 import Button from "@mui/material/Button";
 import { TuneOutlined } from "@mui/icons-material";
-import PreferencesForm from "./PreferencesForm";
+import PreferencesContent from "./PreferencesContent";
 import { Grid } from "@mui/material";
 
 export default function PreferencesPopover() {
@@ -46,7 +46,7 @@ export default function PreferencesPopover() {
           alignItems="center"
           sx={{ p: 2, pb: 0.5, maxWidth: 400 }}
         >
-          <PreferencesForm />
+          <PreferencesContent />
         </Grid>
       </Popover>
     </>

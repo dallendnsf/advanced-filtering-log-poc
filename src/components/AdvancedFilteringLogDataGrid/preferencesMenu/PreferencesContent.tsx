@@ -23,14 +23,14 @@ export default function PreferencesForm() {
     getRecommendedTableState()
   );
 
-  function handleSave() {
+  const handleSave = () => {
     update(overrideActiveConfigForSave(apiRef.current.exportState()));
-  }
+  };
 
-  function handleUseRecommended() {
+  const handleUseRecommended = () => {
     reset();
     apiRef.current.restoreState(getRecommendedTableState());
-  }
+  };
 
   return (
     <Grid item>

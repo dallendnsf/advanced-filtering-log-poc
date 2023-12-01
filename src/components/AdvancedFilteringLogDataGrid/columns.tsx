@@ -21,7 +21,7 @@ export const columns = [
         second: "numeric",
       });
     },
-    // filterable: false,
+    filterable: false,
     valueOptions: () => {
       return [
         "Last Minute",
