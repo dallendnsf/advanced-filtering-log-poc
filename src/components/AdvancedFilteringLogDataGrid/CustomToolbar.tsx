@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import {
   GridSlotsComponentsProps,
   GridToolbarColumnsButton,
@@ -22,7 +22,7 @@ const TOOLBAR_BUTTON_STYLE = { mr: 1, pl: 2, pr: 2 };
 export default function CustomToolbar(
   props: NonNullable<GridSlotsComponentsProps["toolbar"]>
 ) {
-  const { queryOptions } = props;
+  const { queryOptions, initialState } = props;
   const apiRef = useGridApiContext();
   // console.log("query options", queryOptions);
   // console.log("items", queryOptions?.filterModel?.items);

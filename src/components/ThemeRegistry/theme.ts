@@ -12,12 +12,18 @@ const theme = createTheme({
     mode: "light",
     primary: {
       main: "#3527fd",
+      light: "#534Ffff",
+      dark: "#0f13c1",
     },
     secondary: {
       main: "#ce008e",
+      light: "#f306b0",
+      dark: "#a50085",
     },
     error: {
       main: "#d32f2f",
+      light: "#f44336",
+      dark: "#b71c1c",
     },
   },
   typography: {

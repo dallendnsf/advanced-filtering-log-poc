@@ -42,6 +42,27 @@ export default function AdvancedFilteringLogDataGrid({ logs }: Props) {
 
   const apiRef = useGridApiRef();
 
+  // TODO: We have a preferred initial state but we want to allow users to override the default state and persist it to local storage. If they ever want to revert back we need to still have reference to the DNSF recommendation
+  const dnsfInitialState = {
+    columns: {
+      orderedFields: [
+        ...pinnedColumn.left,
+        ...getOrderedFields(pinnedColumn),
+        ...pinnedColumn.right,
+      ],
+    },
+    pinnedColumns: { ...pinnedColumn },
+    sorting: {
+      // set default sorting
+      sortModel: initialSort,
+    },
+    filter: {
+      filterModel: initialFilters,
+    },
+    pagination: { paginationModel: { pageSize: 25 } },
+    // TODO: Technical limitations will tell us what the conservative default page size is. It will also inform which alternative options they can choose (if any). 25 for now so I can test pager design
+  };
+
   return (
     <Box sx={{ height: "90vh", width: "100%" }}>
       <StyledDataGridPro
@@ -50,25 +71,7 @@ export default function AdvancedFilteringLogDataGrid({ logs }: Props) {
         columns={columns}
         density="compact" // Default density is compact due to the amount of data we want to have on screen. User can change later
         sortingOrder={["asc", "desc"]} // Don't allow unsort. One column should always be sorted.
-        initialState={{
-          columns: {
-            orderedFields: [
-              ...pinnedColumn.left,
-              ...getOrderedFields(pinnedColumn),
-              ...pinnedColumn.right,
-            ],
-          },
-          pinnedColumns: { ...pinnedColumn },
-          sorting: {
-            // set default sorting
-            sortModel: initialSort,
-          },
-          filter: {
-            filterModel: initialFilters,
-          },
-          pagination: { paginationModel: { pageSize: 25 } },
-          // TODO: Technical limitations will tell us what the conservative default page size is. It will also inform which alternative options they can choose (if any). 25 for now so I can test pager design
-        }}
+        initialState={dnsfInitialState} // TODO: Check for local storage user preference and set that instead
         disableRowSelectionOnClick
         pagination
         onFilterModelChange={onFilterChange}
@@ -82,6 +85,7 @@ export default function AdvancedFilteringLogDataGrid({ logs }: Props) {
         slotProps={{
           toolbar: {
             queryOptions,
+            initialState: dnsfInitialState,
           },
         }}
         getRowClassName={(
