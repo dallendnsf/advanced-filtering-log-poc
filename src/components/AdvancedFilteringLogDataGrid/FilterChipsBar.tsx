@@ -56,6 +56,7 @@ export default function FilterChipsBar({
       </Grid>
     );
   }
+  return <></>;
 }
 
 function getChipLabel(item: GridFilterItem) {
