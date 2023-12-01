@@ -15,14 +15,19 @@ export default function FilterChipsBar({
 }: Props) {
   if (filterModel && filterModel.items) {
     return (
-      <Grid container alignItems="center">
+      <Grid container alignItems="center" sx={{ pl: 1, pr: 1, pb: 1 }}>
         <Grid item>
           {filterModel?.quickFilterValues &&
           filterModel?.quickFilterValues.length > 0 ? (
             <Chip
               label={`Quick Filter: ${filterModel?.quickFilterValues[0]}`}
               onDelete={() => setQuickFilterValues([])}
-              sx={{ mr: 1 }}
+              sx={{
+                mr: 1,
+                "& span": {
+                  lineHeight: "1",
+                },
+              }}
               size="small"
               variant="outlined"
               color="primary"
@@ -31,13 +36,17 @@ export default function FilterChipsBar({
             ""
           )}
           {filterModel?.items.map((item: GridFilterItem, index: number) => {
-            console.log(item);
             return (
               <Chip
                 key={`filter_chip_${item.field}_${index}`}
                 label={getChipLabel(item)}
                 onDelete={() => deleteFilterItem(item)}
-                sx={{ mr: 1 }}
+                sx={{
+                  mr: 1,
+                  "& span": {
+                    lineHeight: "1",
+                  },
+                }}
                 size="small"
                 variant="outlined"
               />
