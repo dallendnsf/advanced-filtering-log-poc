@@ -75,6 +75,11 @@ export const columns = [
     ),
   },
   {
+    field: "categories",
+    headerName: "Categories & Applications",
+    filterOperators: getCustomGridStringOperators(),
+  },
+  {
     field: "site",
     headerName: "Site",
     type: "singleSelect",

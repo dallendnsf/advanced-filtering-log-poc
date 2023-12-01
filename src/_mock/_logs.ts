@@ -11,6 +11,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Message Boards & Forums", "News & Media"],
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ export const _logs: ILog[] = [
     site: USERS[1].site,
     deployment: USERS[1].deployment,
     localUserNameOrIpAddress: USERS[1].userName,
+    categories: ["Information Technology", "Business", "Bussiness: Slack"],
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ export const _logs: ILog[] = [
     site: USERS[1].site,
     deployment: USERS[1].deployment,
     localUserNameOrIpAddress: USERS[1].userName,
+    categories: ["Information Technology", "Business"],
   },
   {
     id: 4,
@@ -41,6 +44,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Content Servers", "Ecosystem Applications: Google"],
   },
   {
     id: 5,
@@ -51,6 +55,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Webmail & Chat"],
   },
   {
     id: 6,
@@ -61,6 +66,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Webmail & Chat"],
   },
   {
     id: 7,
@@ -71,6 +77,7 @@ export const _logs: ILog[] = [
     site: USERS[1].site,
     deployment: USERS[1].deployment,
     localUserNameOrIpAddress: USERS[1].userName,
+    categories: ["Message Boards & Forums", "News & Media"],
   },
   {
     id: 8,
@@ -81,6 +88,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Content Servers", "Information Technology"],
   },
   {
     id: 9,
@@ -91,6 +99,7 @@ export const _logs: ILog[] = [
     site: USERS[1].site,
     deployment: USERS[1].deployment,
     localUserNameOrIpAddress: USERS[1].userName,
+    categories: ["Information Technology", "Business", "Bussiness: Slack"],
   },
   {
     id: 10,
@@ -101,6 +110,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Information Technology", "Business", "Bussiness: Slack"],
   },
   {
     id: 11,
@@ -111,6 +121,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Content Servers", "Ecosystem Applications: Google"],
   },
   {
     id: 12,
@@ -121,6 +132,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Content Servers", "Information Technology"],
   },
   {
     id: 13,
@@ -131,6 +143,7 @@ export const _logs: ILog[] = [
     site: USERS[1].site,
     deployment: USERS[1].deployment,
     localUserNameOrIpAddress: USERS[1].userName,
+    categories: ["Message Boards & Forums", "News & Media"],
   },
   {
     id: 14,
@@ -141,6 +154,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Webmail & Chat"],
   },
   {
     id: 15,
@@ -151,6 +165,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Content Servers", "Ecosystem Applications: Google"],
   },
   {
     id: 16,
@@ -161,6 +176,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Message Boards & Forums", "News & Media"],
   },
   {
     id: 17,
@@ -171,6 +187,7 @@ export const _logs: ILog[] = [
     site: USERS[1].site,
     deployment: USERS[1].deployment,
     localUserNameOrIpAddress: USERS[1].userName,
+    categories: ["Information Technology", "Business", "Bussiness: Slack"],
   },
   {
     id: 18,
@@ -181,6 +198,7 @@ export const _logs: ILog[] = [
     site: USERS[1].site,
     deployment: USERS[1].deployment,
     localUserNameOrIpAddress: USERS[1].userName,
+    categories: ["Information Technology", "Business"],
   },
   {
     id: 19,
@@ -191,6 +209,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Content Servers", "Ecosystem Applications: Google"],
   },
   {
     id: 20,
@@ -201,6 +220,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Webmail & Chat"],
   },
   {
     id: 21,
@@ -211,6 +231,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Webmail & Chat"],
   },
   {
     id: 22,
@@ -221,6 +242,7 @@ export const _logs: ILog[] = [
     site: USERS[1].site,
     deployment: USERS[1].deployment,
     localUserNameOrIpAddress: USERS[1].userName,
+    categories: ["Message Boards & Forums", "News & Media"],
   },
   {
     id: 23,
@@ -231,6 +253,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Content Servers", "Information Technology"],
   },
   {
     id: 24,
@@ -241,6 +264,7 @@ export const _logs: ILog[] = [
     site: USERS[1].site,
     deployment: USERS[1].deployment,
     localUserNameOrIpAddress: USERS[1].userName,
+    categories: ["Information Technology", "Business", "Bussiness: Slack"],
   },
   {
     id: 25,
@@ -251,6 +275,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Information Technology", "Business", "Bussiness: Slack"],
   },
   {
     id: 26,
@@ -261,6 +286,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Content Servers", "Ecosystem Applications: Google"],
   },
   {
     id: 27,
@@ -271,6 +297,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Content Servers", "Information Technology"],
   },
   {
     id: 28,
@@ -281,6 +308,7 @@ export const _logs: ILog[] = [
     site: USERS[1].site,
     deployment: USERS[1].deployment,
     localUserNameOrIpAddress: USERS[1].userName,
+    categories: ["Message Boards & Forums", "News & Media"],
   },
   {
     id: 29,
@@ -291,6 +319,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Webmail & Chat"],
   },
   {
     id: 30,
@@ -301,6 +330,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Content Servers", "Ecosystem Applications: Google"],
   },
   {
     id: 31,
@@ -311,6 +341,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Message Boards & Forums", "News & Media"],
   },
   {
     id: 32,
@@ -321,6 +352,7 @@ export const _logs: ILog[] = [
     site: USERS[1].site,
     deployment: USERS[1].deployment,
     localUserNameOrIpAddress: USERS[1].userName,
+    categories: ["Information Technology", "Business", "Bussiness: Slack"],
   },
   {
     id: 33,
@@ -331,6 +363,7 @@ export const _logs: ILog[] = [
     site: USERS[1].site,
     deployment: USERS[1].deployment,
     localUserNameOrIpAddress: USERS[1].userName,
+    categories: ["Information Technology", "Business"],
   },
   {
     id: 34,
@@ -341,6 +374,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Content Servers", "Ecosystem Applications: Google"],
   },
   {
     id: 35,
@@ -351,6 +385,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Webmail & Chat"],
   },
   {
     id: 36,
@@ -361,6 +396,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Webmail & Chat"],
   },
   {
     id: 37,
@@ -371,6 +407,7 @@ export const _logs: ILog[] = [
     site: USERS[1].site,
     deployment: USERS[1].deployment,
     localUserNameOrIpAddress: USERS[1].userName,
+    categories: ["Message Boards & Forums", "News & Media"],
   },
   {
     id: 38,
@@ -381,6 +418,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Content Servers", "Information Technology"],
   },
   {
     id: 39,
@@ -391,6 +429,7 @@ export const _logs: ILog[] = [
     site: USERS[1].site,
     deployment: USERS[1].deployment,
     localUserNameOrIpAddress: USERS[1].userName,
+    categories: ["Information Technology", "Business", "Bussiness: Slack"],
   },
   {
     id: 40,
@@ -401,6 +440,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Information Technology", "Business", "Bussiness: Slack"],
   },
   {
     id: 41,
@@ -411,6 +451,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Content Servers", "Ecosystem Applications: Google"],
   },
   {
     id: 42,
@@ -421,6 +462,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Content Servers", "Information Technology"],
   },
   {
     id: 43,
@@ -431,6 +473,7 @@ export const _logs: ILog[] = [
     site: USERS[1].site,
     deployment: USERS[1].deployment,
     localUserNameOrIpAddress: USERS[1].userName,
+    categories: ["Message Boards & Forums", "News & Media"],
   },
   {
     id: 44,
@@ -441,6 +484,7 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Webmail & Chat"],
   },
   {
     id: 45,
@@ -451,5 +495,6 @@ export const _logs: ILog[] = [
     site: USERS[0].site,
     deployment: USERS[0].deployment,
     localUserNameOrIpAddress: USERS[0].userName,
+    categories: ["Content Servers", "Ecosystem Applications: Google"],
   },
 ];

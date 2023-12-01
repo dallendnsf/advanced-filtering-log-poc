@@ -7,4 +7,5 @@ export type ILog = {
   site: string;
   deployment: string;
   localUserNameOrIpAddress: string;
+  categories: string[];
 };

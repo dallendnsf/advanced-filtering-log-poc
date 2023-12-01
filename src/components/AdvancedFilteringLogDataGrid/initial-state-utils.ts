@@ -13,13 +13,13 @@ export function getRecommendedTableState(): GridInitialStatePro {
         },
         destination: {
           maxWidth: -1,
-          minWidth: 50,
+          minWidth: 240,
           width: 100,
           flex: 1,
         },
         reason: {
           maxWidth: -1,
-          minWidth: 50,
+          minWidth: 240,
           width: 100,
           flex: 1,
         },
@@ -27,6 +27,11 @@ export function getRecommendedTableState(): GridInitialStatePro {
           maxWidth: -1,
           minWidth: 50,
           width: 104,
+        },
+        categories: {
+          maxWidth: -1,
+          minWidth: 50,
+          width: 240,
         },
         site: {
           maxWidth: -1,
