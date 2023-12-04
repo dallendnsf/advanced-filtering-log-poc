@@ -42,7 +42,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ThemeRegistry>
-          <AppBar position="fixed" sx={{ zIndex: 2000 }}>
+          <AppBar position="fixed">
             <Toolbar sx={{ backgroundColor: "background.paper" }}>
               <Typography variant="h6" color="text.primary">
                 Advanced Filtering Log Data Grid PoC

@@ -73,6 +73,7 @@ export default function PreferencesContent() {
             open={saveVisible}
             autoHideDuration={3000}
             onClose={handleSnackbarClose}
+            anchorOrigin={{ vertical: "top", horizontal: "right" }}
           >
             <Alert
               onClose={handleSnackbarClose}
@@ -95,7 +96,7 @@ export default function PreferencesContent() {
             open={defaultVisible}
             autoHideDuration={3000}
             onClose={handleSnackbarClose}
-            color="info"
+            anchorOrigin={{ vertical: "top", horizontal: "right" }}
           >
             <Alert
               onClose={handleSnackbarClose}
