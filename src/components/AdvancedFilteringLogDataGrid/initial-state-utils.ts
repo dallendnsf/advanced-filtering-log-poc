@@ -1,7 +1,7 @@
 import { GridInitialStatePro } from "@mui/x-data-grid-pro/models/gridStatePro";
 import { columns } from "./columns";
 
-export function getRecommendedTableState(): GridInitialStatePro {
+export function getDefaultTableState(): GridInitialStatePro {
   return {
     columns: {
       columnVisibilityModel: {},

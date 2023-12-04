@@ -1,93 +1,77 @@
 import * as React from "react";
 import Typography from "@mui/material/Typography";
 import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Button,
   Grid,
-  ListItemIcon,
-  ListItemText,
-  MenuItem,
-  MenuList,
 } from "@mui/material";
 import {
   ADVANCED_FILTERING_LOG,
-  getRecommendedTableState,
+  getDefaultTableState,
   overrideActiveConfigForSave,
 } from "../initial-state-utils";
 import { useGridApiContext } from "@mui/x-data-grid-pro";
 import { useLocalStorage } from "@/hooks/use-local-storage";
-import { RestartAlt, SaveOutlined } from "@mui/icons-material";
+import {
+  ExpandMoreOutlined,
+  RestartAlt,
+  RestartAltOutlined,
+  SaveOutlined,
+} from "@mui/icons-material";
+import PreferencesAccordion from "./PreferencesAccordion";
 
-export default function PreferencesForm() {
+export default function PreferencesContent() {
   const apiRef = useGridApiContext();
   const { update, reset } = useLocalStorage(
     ADVANCED_FILTERING_LOG,
-    getRecommendedTableState()
+    getDefaultTableState()
   );
 
   const handleSave = () => {
     update(overrideActiveConfigForSave(apiRef.current.exportState()));
   };
 
-  const handleUseRecommended = () => {
+  const handleDefault = () => {
     reset();
-    apiRef.current.restoreState(getRecommendedTableState());
+    apiRef.current.restoreState(getDefaultTableState());
   };
 
   return (
     <Grid item>
       <Grid container spacing={2}>
-        <Grid item>
-          <Typography variant="body2">
-            You can override the default configuration for how the table will
-            load using the active configuration. We will save the following
-            settings:
-          </Typography>
-          <ul>
-            <li>
-              <Typography variant="body2">Active Filters</Typography>
-            </li>
-            <li>
-              <Typography variant="body2">Columns</Typography>
-              <ul>
-                <li>
-                  <Typography variant="body2">Visibility</Typography>
-                </li>
-                <li>
-                  <Typography variant="body2">Order</Typography>
-                </li>
-                <li>
-                  <Typography variant="body2">Width</Typography>
-                </li>
-                <li>
-                  <Typography variant="body2">Sort</Typography>
-                </li>
-                <li>
-                  <Typography variant="body2">Pinned</Typography>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Typography variant="body2">Page Size</Typography>
-            </li>
-          </ul>
-        </Grid>
         <Grid item xs={12}>
-          <MenuList>
-            <MenuItem onClick={() => handleSave()}>
-              <ListItemIcon color="primary">
-                <SaveOutlined />
-              </ListItemIcon>
-              <ListItemText
-                color="primary"
-                primary="Save Active Configuration"
-              />
-            </MenuItem>
-            <MenuItem onClick={() => handleUseRecommended()}>
-              <ListItemIcon>
-                <RestartAlt />
-              </ListItemIcon>
-              <ListItemText primary="Use Recommended Settings" />
-            </MenuItem>
-          </MenuList>
+          <Grid container spacing={2} sx={{ pl: 1, pr: 1, pt: 1 }}>
+            <Grid item xs={12}>
+              <Typography variant="body2">
+                You can override the default table configuration by saving the
+                current configuration as your preference.
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <PreferencesAccordion />
+            </Grid>
+          </Grid>
+        </Grid>
+
+        <Grid item xs={6}>
+          <Button
+            onClick={() => handleSave()}
+            startIcon={<SaveOutlined />}
+            sx={{ mr: 1, pl: 2, pr: 2 }}
+          >
+            Save
+          </Button>
+        </Grid>
+        <Grid item xs={6} textAlign="end">
+          <Button
+            onClick={() => handleDefault()}
+            startIcon={<RestartAltOutlined />}
+            sx={{ pl: 2, pr: 2 }}
+          >
+            Use Default
+          </Button>
         </Grid>
       </Grid>
     </Grid>

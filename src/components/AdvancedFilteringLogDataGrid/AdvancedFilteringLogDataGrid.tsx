@@ -11,7 +11,7 @@ import CustomPagination from "./CustomPagination";
 import { columns } from "./columns";
 import {
   ADVANCED_FILTERING_LOG,
-  getRecommendedTableState,
+  getDefaultTableState,
 } from "./initial-state-utils";
 import { useEffect } from "react";
 import { useLocalStorage } from "@/hooks/use-local-storage";
@@ -21,9 +21,9 @@ type Props = {
 };
 
 export default function AdvancedFilteringLogDataGrid({ logs }: Props) {
-  const { state, update, reset } = useLocalStorage(
+  const { state } = useLocalStorage(
     ADVANCED_FILTERING_LOG,
-    getRecommendedTableState()
+    getDefaultTableState()
   );
 
   const [queryOptions, setQueryOptions] = React.useState(state.filter);

@@ -4,7 +4,7 @@ import { GridRenderCellParams } from "@mui/x-data-grid-pro";
 import {
   getCustomGridSingleSelectOperators,
   getCustomGridStringOperators,
-} from "./customer-filter-operators";
+} from "./custom-filter-operators";
 
 export const columns = [
   {

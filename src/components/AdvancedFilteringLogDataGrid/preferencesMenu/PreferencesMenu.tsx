@@ -41,11 +41,7 @@ export default function PreferencesPopover() {
           horizontal: "left",
         }}
       >
-        <Grid
-          container
-          alignItems="center"
-          sx={{ p: 2, pb: 0.5, maxWidth: 400 }}
-        >
+        <Grid container alignItems="center" sx={{ p: 0.5, maxWidth: 400 }}>
           <PreferencesContent />
         </Grid>
       </Popover>
