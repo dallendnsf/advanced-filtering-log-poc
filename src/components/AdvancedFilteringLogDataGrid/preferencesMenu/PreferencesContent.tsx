@@ -1,12 +1,6 @@
 import * as React from "react";
 import Typography from "@mui/material/Typography";
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Button,
-  Grid,
-} from "@mui/material";
+import { Alert, Button, Grid, Snackbar } from "@mui/material";
 import {
   ADVANCED_FILTERING_LOG,
   getDefaultTableState,
@@ -14,12 +8,7 @@ import {
 } from "../initial-state-utils";
 import { useGridApiContext } from "@mui/x-data-grid-pro";
 import { useLocalStorage } from "@/hooks/use-local-storage";
-import {
-  ExpandMoreOutlined,
-  RestartAlt,
-  RestartAltOutlined,
-  SaveOutlined,
-} from "@mui/icons-material";
+import { RestartAltOutlined, SaveOutlined } from "@mui/icons-material";
 import PreferencesAccordion from "./PreferencesAccordion";
 
 export default function PreferencesContent() {
@@ -29,13 +18,30 @@ export default function PreferencesContent() {
     getDefaultTableState()
   );
 
+  const [saveVisible, setSaveVisibile] = React.useState(false);
+  const [defaultVisible, setDefaultVisibile] = React.useState(false);
+
   const handleSave = () => {
     update(overrideActiveConfigForSave(apiRef.current.exportState()));
+    setSaveVisibile(true);
   };
 
   const handleDefault = () => {
     reset();
     apiRef.current.restoreState(getDefaultTableState());
+    setDefaultVisibile(true);
+  };
+
+  const handleSnackbarClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setSaveVisibile(false);
+    setDefaultVisibile(false);
   };
 
   return (
@@ -63,6 +69,19 @@ export default function PreferencesContent() {
           >
             Save
           </Button>
+          <Snackbar
+            open={saveVisible}
+            autoHideDuration={3000}
+            onClose={handleSnackbarClose}
+          >
+            <Alert
+              onClose={handleSnackbarClose}
+              severity="success"
+              color="info"
+            >
+              Table Preferences Saved!
+            </Alert>
+          </Snackbar>
         </Grid>
         <Grid item xs={6} textAlign="end">
           <Button
@@ -72,6 +91,20 @@ export default function PreferencesContent() {
           >
             Use Default
           </Button>
+          <Snackbar
+            open={defaultVisible}
+            autoHideDuration={3000}
+            onClose={handleSnackbarClose}
+            color="info"
+          >
+            <Alert
+              onClose={handleSnackbarClose}
+              severity="success"
+              color="info"
+            >
+              Default configuration restored!
+            </Alert>
+          </Snackbar>
         </Grid>
       </Grid>
     </Grid>
