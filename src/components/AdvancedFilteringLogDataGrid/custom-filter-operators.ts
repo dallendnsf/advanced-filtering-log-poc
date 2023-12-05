@@ -37,3 +37,10 @@ export function getCustomGridDateOperators() {
 export function getCustomGridBooleanOperators() {
   return getGridBooleanOperators().filter((operator) => operator); // All operators are suitable for now. Adding this function as a placeholder
 }
+
+export function formatOperatorString(operator: string) {
+  return operator
+    .split(/(?=[A-Z])/)
+    .join(" ")
+    .toLowerCase();
+}

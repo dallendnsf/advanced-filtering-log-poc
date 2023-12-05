@@ -1,6 +1,7 @@
 import { Chip, Grid } from "@mui/material";
 import { GridFilterItem, GridFilterModel } from "@mui/x-data-grid-pro";
 import { columns } from "./columns";
+import { formatOperatorString } from "./custom-filter-operators";
 
 type Props = {
   filterModel?: GridFilterModel;
@@ -62,10 +63,12 @@ export default function FilterChipsBar({
 function getChipLabel(item: GridFilterItem) {
   const columnDetails = columns.find((col) => col.field === item.field);
 
+  const formattedOperator = formatOperatorString(item.operator);
+
   if (columnDetails) {
-    return `${columnDetails.headerName} ${item.operator} ${item.value}`;
+    return `${columnDetails.headerName} ${formattedOperator} ${item.value}`;
   }
 
   // fallback if we dont find the column
-  return `${item.field} ${item.operator} ${item.value}`;
+  return `${item.field} ${formattedOperator} ${item.value}`;
 }
