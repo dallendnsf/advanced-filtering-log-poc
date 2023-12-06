@@ -17,7 +17,12 @@ const TOOLBAR_BUTTON_STYLE = { mr: 1, pl: 2, pr: 2 };
 export default function CustomToolbar(
   props: NonNullable<GridSlotsComponentsProps["toolbar"]>
 ) {
-  const { queryOptions } = props;
+  const {
+    queryOptions,
+    setColumnsButtonEl,
+    setFilterButtonEl,
+    setFilterActive,
+  } = props;
   const apiRef = useGridApiContext();
 
   return (
@@ -29,8 +34,24 @@ export default function CustomToolbar(
         sx={{ p: 1 }}
       >
         <Grid item>
-          <GridToolbarColumnsButton sx={TOOLBAR_BUTTON_STYLE} />
-          <GridToolbarFilterButton sx={TOOLBAR_BUTTON_STYLE} />
+          <GridToolbarColumnsButton
+            sx={TOOLBAR_BUTTON_STYLE}
+            ref={setColumnsButtonEl}
+            onClick={() => {
+              setFilterActive(false);
+            }}
+          />
+          <GridToolbarFilterButton
+            sx={TOOLBAR_BUTTON_STYLE}
+            ref={setFilterButtonEl}
+            componentsProps={{
+              button: {
+                onClick: () => {
+                  setFilterActive(true);
+                },
+              },
+            }}
+          />
           <GridToolbarDensitySelector sx={TOOLBAR_BUTTON_STYLE} />
           <GridToolbarExport sx={TOOLBAR_BUTTON_STYLE} />
           <PreferencesMenu />

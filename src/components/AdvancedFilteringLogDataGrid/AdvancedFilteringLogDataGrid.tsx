@@ -37,6 +37,10 @@ export default function AdvancedFilteringLogDataGrid({ logs }: Props) {
     apiRef.current.restoreState(state);
   }, [apiRef, state]);
 
+  const [isFilterActive, setFilterActive] = React.useState(false);
+  const [filterButtonEl, setFilterButtonEl] = React.useState(null);
+  const [columnsButtonEl, setColumnsButtonEl] = React.useState(null);
+
   return (
     <Box sx={{ height: "90vh", width: "100%" }}>
       <StyledDataGridPro
@@ -57,9 +61,15 @@ export default function AdvancedFilteringLogDataGrid({ logs }: Props) {
           // TODO: noRowsOverlay: CustomNoRowsOverlay,
         }}
         slotProps={{
+          panel: {
+            anchorEl: isFilterActive ? filterButtonEl : columnsButtonEl,
+          },
           toolbar: {
             queryOptions,
             initialState: state,
+            setColumnsButtonEl,
+            setFilterButtonEl,
+            setFilterActive,
           },
         }}
         getRowClassName={(
