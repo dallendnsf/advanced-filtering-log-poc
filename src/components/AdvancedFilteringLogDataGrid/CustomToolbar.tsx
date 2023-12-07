@@ -34,13 +34,6 @@ export default function CustomToolbar(
         sx={{ p: 1 }}
       >
         <Grid item>
-          <GridToolbarColumnsButton
-            sx={TOOLBAR_BUTTON_STYLE}
-            ref={setColumnsButtonEl}
-            onClick={() => {
-              setFilterActive(false);
-            }}
-          />
           <GridToolbarFilterButton
             sx={TOOLBAR_BUTTON_STYLE}
             ref={setFilterButtonEl}
@@ -50,6 +43,13 @@ export default function CustomToolbar(
                   setFilterActive(true);
                 },
               },
+            }}
+          />
+          <GridToolbarColumnsButton
+            sx={TOOLBAR_BUTTON_STYLE}
+            ref={setColumnsButtonEl}
+            onClick={() => {
+              setFilterActive(false);
             }}
           />
           <GridToolbarDensitySelector sx={TOOLBAR_BUTTON_STYLE} />
