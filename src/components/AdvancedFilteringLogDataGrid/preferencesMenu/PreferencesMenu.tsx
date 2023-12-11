@@ -72,7 +72,7 @@ export default function PreferencesPopover() {
         startIcon={<TuneOutlined />}
         sx={{ mr: 1, pl: 2, pr: 2 }}
       >
-        Preferences
+        Save View
       </Button>
       <Popover
         id={POPOVER_ID}

@@ -1,6 +1,12 @@
-import { USERS } from "@/_mock";
+import { USERS, CATEGORIES } from "@/_mock";
 import { Chip } from "@mui/material";
-import { GridRenderCellParams } from "@mui/x-data-grid-pro";
+import {
+  GridCellParams,
+  GridColDef,
+  GridFilterInputSingleSelect,
+  GridFilterItem,
+  GridRenderCellParams,
+} from "@mui/x-data-grid-pro";
 import {
   getCustomGridSingleSelectOperators,
   getCustomGridStringOperators,
@@ -21,7 +27,7 @@ export const columns = [
         second: "numeric",
       });
     },
-    filterable: false,
+    filterable: false, // TODO: Decide what we are able to support and enable the filter. There is likely to be a default filter for this field.
     valueOptions: () => {
       return [
         "Last Minute",
@@ -77,7 +83,43 @@ export const columns = [
   {
     field: "categories",
     headerName: "Categories & Applications",
-    filterOperators: getCustomGridStringOperators(),
+    type: "singleSelect",
+    filterOperators: [
+      {
+        label: "Includes",
+        value: "includes",
+        InputComponent: GridFilterInputSingleSelect,
+        getApplyFilterFn: (filterItem: GridFilterItem, column: GridColDef) => {
+          if (!filterItem.field || !filterItem.value || !filterItem.operator) {
+            return null;
+          }
+
+          return (params: GridCellParams): boolean => {
+            return String(params.value).indexOf(filterItem.value) > -1;
+          };
+        },
+      },
+      {
+        label: "Does Not Include",
+        value: "doesNotInclude",
+        InputComponent: GridFilterInputSingleSelect,
+        getApplyFilterFn: (filterItem: GridFilterItem, column: GridColDef) => {
+          if (!filterItem.field || !filterItem.value || !filterItem.operator) {
+            return null;
+          }
+
+          return (params: GridCellParams): boolean => {
+            return String(params.value).indexOf(filterItem.value) == -1;
+          };
+        },
+      },
+    ],
+    valueOptions: () => {
+      return CATEGORIES.map((category) => category).sort(); // TODO: Retrieve all unique content categories, threat categories, and Applications. this is just mocked for the PoC
+    },
+    renderCell: (params: GridRenderCellParams<any, string[]>) => {
+      return params.value ? params.value.join(", ") : params.value;
+    },
   },
   {
     field: "site",
@@ -85,7 +127,7 @@ export const columns = [
     type: "singleSelect",
     filterOperators: getCustomGridSingleSelectOperators(),
     valueOptions: () => {
-      return USERS.map((user) => user.site);
+      return USERS.map((user) => user.site).sort(); // TODO: Retrieve all unique sites. this is just mocked for the PoC
     },
   },
   {
@@ -94,7 +136,7 @@ export const columns = [
     type: "singleSelect",
     filterOperators: getCustomGridSingleSelectOperators(),
     valueOptions: () => {
-      return USERS.map((user) => user.deployment);
+      return USERS.map((user) => user.deployment).sort(); // TODO: Retrieve all unique deployments. this is just mocked for the PoC
     },
   },
   {
@@ -103,7 +145,7 @@ export const columns = [
     type: "singleSelect",
     filterOperators: getCustomGridSingleSelectOperators(),
     valueOptions: () => {
-      return USERS.map((user) => user.userName);
+      return USERS.map((user) => user.userName).sort(); // TODO: Retrieve all unique users/IPs. this is just mocked for the PoC
     },
   },
 ];

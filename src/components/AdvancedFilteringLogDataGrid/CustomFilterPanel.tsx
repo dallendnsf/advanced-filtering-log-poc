@@ -3,11 +3,10 @@ import { GridFilterPanel, GridLogicOperator } from "@mui/x-data-grid-pro";
 export default function CustomFilterPanel(props: any) {
   return (
     <GridFilterPanel
-      logicOperators={[GridLogicOperator.And]}
       filterFormProps={{
         logicOperatorInputProps: {
           size: "small",
-          sx: { display: "none" },
+          sx: { mr: 2 },
         },
         columnInputProps: {
           size: "small",
