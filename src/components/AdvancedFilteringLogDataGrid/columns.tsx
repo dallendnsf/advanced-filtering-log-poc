@@ -86,7 +86,7 @@ export const columns = [
     type: "singleSelect",
     filterOperators: [
       {
-        label: "Includes",
+        label: "includes",
         value: "includes",
         InputComponent: GridFilterInputSingleSelect,
         getApplyFilterFn: (filterItem: GridFilterItem, column: GridColDef) => {
@@ -100,7 +100,7 @@ export const columns = [
         },
       },
       {
-        label: "Does Not Include",
+        label: "does not include",
         value: "doesNotInclude",
         InputComponent: GridFilterInputSingleSelect,
         getApplyFilterFn: (filterItem: GridFilterItem, column: GridColDef) => {
