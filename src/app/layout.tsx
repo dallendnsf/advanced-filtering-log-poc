@@ -25,7 +25,10 @@ export const metadata = {
 
 const DRAWER_WIDTH = 240;
 
-const LINKS = [{ text: "Home", href: "/", icon: HomeIcon }];
+const LINKS = [
+  { text: "Adv Filtering Log", href: "/", icon: HomeIcon },
+  { text: "Org Ignore List", href: "/org-ignore-list", icon: HomeIcon },
+];
 
 const PLACEHOLDER_LINKS = [
   { text: "Settings", icon: SettingsIcon },
@@ -45,7 +48,7 @@ export default function RootLayout({
           <AppBar position="fixed">
             <Toolbar sx={{ backgroundColor: "background.paper" }}>
               <Typography variant="h6" color="text.primary">
-                Advanced Filtering Log Data Grid PoC
+                Data Grid PoCs
               </Typography>
             </Toolbar>
           </AppBar>
