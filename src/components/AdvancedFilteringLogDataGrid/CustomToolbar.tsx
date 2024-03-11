@@ -11,6 +11,7 @@ import {
 import FilterChipsBar from "./FilterChipsBar";
 import React from "react";
 import PreferencesMenu from "./preferencesMenu/PreferencesMenu";
+import GridRefresh from "./GridRefresh";
 
 const TOOLBAR_BUTTON_STYLE = { mr: 1, pl: 2, pr: 2 };
 
@@ -54,7 +55,9 @@ export default function CustomToolbar(
           />
           <GridToolbarDensitySelector sx={TOOLBAR_BUTTON_STYLE} />
           <GridToolbarExport sx={TOOLBAR_BUTTON_STYLE} />
+
           <PreferencesMenu />
+          <GridRefresh />
         </Grid>
         <Grid item>
           <GridToolbarQuickFilter variant="outlined" size="small" fullWidth />

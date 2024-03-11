@@ -27,7 +27,7 @@ export const columns = [
         second: "numeric",
       });
     },
-    filterable: false, // TODO: Decide what we are able to support and enable the filter. There is likely to be a default filter for this field.
+    filterable: true, // TODO: Decide what we are able to support and enable the filter. There is likely to be a default filter for this field.
     valueOptions: () => {
       return [
         "Last Minute",

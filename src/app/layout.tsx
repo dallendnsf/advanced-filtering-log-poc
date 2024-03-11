@@ -17,6 +17,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import SupportIcon from "@mui/icons-material/Support";
 import LogoutIcon from "@mui/icons-material/Logout";
 import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry";
+import { RefreshOutlined } from "@mui/icons-material";
 
 export const metadata = {
   title: "Next.js App Router + Material UI v5",
@@ -28,6 +29,7 @@ const DRAWER_WIDTH = 240;
 const LINKS = [
   { text: "Adv Filtering Log", href: "/", icon: HomeIcon },
   { text: "Org Ignore List", href: "/org-ignore-list", icon: HomeIcon },
+  { text: "Data Refresh", href: "/data-refresh", icon: RefreshOutlined },
 ];
 
 const PLACEHOLDER_LINKS = [
@@ -48,7 +50,7 @@ export default function RootLayout({
           <AppBar position="fixed">
             <Toolbar sx={{ backgroundColor: "background.paper" }}>
               <Typography variant="h6" color="text.primary">
-                Data Grid PoCs
+                Local MUI Prototyping
               </Typography>
             </Toolbar>
           </AppBar>
