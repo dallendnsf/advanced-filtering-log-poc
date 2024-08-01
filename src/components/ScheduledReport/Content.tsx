@@ -2,10 +2,18 @@ import Grid from "@mui/material/Grid";
 import theme from "../ThemeRegistry/theme";
 import { Typography } from "@mui/material";
 import ScheduledReportThreatSummaryCard from "./ThreatSummaryCard";
+import { ITopCategories } from "@/types/top-categories";
+import ScheduledReportContentSummaryCard from "./ContentSummaryCard";
 
-type Props = {};
+type Props = {
+  topThreats: ITopCategories[];
+  topContent: ITopCategories[];
+};
 
-export default function ScheduledReportContent({}: Props) {
+export default function ScheduledReportContent({
+  topThreats,
+  topContent,
+}: Props) {
   return (
     <>
       <Grid
@@ -17,10 +25,10 @@ export default function ScheduledReportContent({}: Props) {
         <Grid item xs={12}>
           <Grid container alignItems="center" spacing={4}>
             <Grid item xs={12}>
-              <ScheduledReportThreatSummaryCard />
+              <ScheduledReportThreatSummaryCard topThreats={topThreats} />
             </Grid>
             <Grid item xs={12}>
-              <ScheduledReportThreatSummaryCard />
+              <ScheduledReportContentSummaryCard topContent={topContent} />
             </Grid>
           </Grid>
         </Grid>

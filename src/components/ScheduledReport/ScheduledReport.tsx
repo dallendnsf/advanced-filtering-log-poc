@@ -5,7 +5,12 @@ import ScheduledReportHeader from "./Header";
 import ScheduledReportAggregates from "./Aggregates";
 import ScheduledReportFooter from "./Footer";
 import ScheduledReportContent from "./Content";
-import { WEEK_REQUEST_SUMMARY, MONTH_REQUEST_SUMMARY } from "@/_mock/";
+import {
+  WEEK_REQUEST_SUMMARY,
+  MONTH_REQUEST_SUMMARY,
+  MONTH_TOP_THREAT_CATEGORIES,
+  MONTH_TOP_CONTENT_CATEGORIES,
+} from "@/_mock/";
 
 export type ContentQuantity = "all" | "15" | "10" | "5";
 export type DataSpan = "7 Days" | "30 Days" | "60 Days" | "90 Days";
@@ -29,6 +34,8 @@ export default function ScheduledReport({
 
   // request summary
   let summaryData = MONTH_REQUEST_SUMMARY;
+  let topThreats = MONTH_TOP_THREAT_CATEGORIES;
+  let topContent = MONTH_TOP_CONTENT_CATEGORIES;
 
   switch (dataSpan) {
     case "7 Days":
@@ -62,7 +69,10 @@ export default function ScheduledReport({
           dataSpan={dataSpan}
           summaryData={summaryData}
         />
-        <ScheduledReportContent />
+        <ScheduledReportContent
+          topThreats={topThreats}
+          topContent={topContent}
+        />
         <ScheduledReportFooter whiteLabel={whiteLabel} />
       </Grid>
     </Grid>

@@ -6,11 +6,11 @@ import TopCategoryBarChart from "./Charts/TopCategoryBarChart";
 import { ITopCategories } from "@/types/top-categories";
 
 type Props = {
-  topThreats: ITopCategories[];
+  topContent: ITopCategories[];
 };
 
-export default function ScheduledReportThreatSummaryCard({
-  topThreats,
+export default function ScheduledReportContentSummaryCard({
+  topContent,
 }: Props) {
   return (
     <>
@@ -24,11 +24,11 @@ export default function ScheduledReportThreatSummaryCard({
           <Grid item xs={12}>
             {/* <Typography variant="h5">Content Section Here</Typography> */}
             <TopCategoryBarChart
-              data={topThreats}
+              data={topContent}
               xDataKey="category"
               seriesDataKey="total_requests"
               layout="vertical"
-              seriesColors={[theme.palette.secondary.main]}
+              seriesColors={[theme.palette.common.black]}
             />
           </Grid>
         </Grid>
