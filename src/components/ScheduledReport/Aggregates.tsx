@@ -17,8 +17,11 @@ export default function ScheduledReportAggregates({
   summaryData,
 }: Props) {
   return (
-    <Paper elevation={0} sx={{ borderRadius: 0, borderBottom: 1 }}>
-      <Grid container padding={theme.spacing(4)}>
+    <Paper
+      elevation={0}
+      sx={{ borderRadius: 0, borderBottom: 1, padding: theme.spacing(2) }}
+    >
+      <Grid container>
         <Grid item xs>
           <AggregateCard
             aggregateType="total_requests"

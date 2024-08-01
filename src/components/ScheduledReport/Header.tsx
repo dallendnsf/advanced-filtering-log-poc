@@ -31,10 +31,10 @@ export default function ScheduledReportHeader({ whiteLabel, dataSpan }: Props) {
         container
         alignItems="center"
         sx={{ backgroundColor: "#ECF1FA" }}
-        padding={theme.spacing(4)}
+        padding={theme.spacing(2)}
       >
         <Grid item xs={12}>
-          <Grid container alignItems="center" spacing={1}>
+          <Grid container alignItems="center" spacing={0}>
             <Grid item xs={12}>
               <Box
                 sx={{
@@ -52,7 +52,7 @@ export default function ScheduledReportHeader({ whiteLabel, dataSpan }: Props) {
               </Box>
             </Grid>
             <Grid item xs={6}>
-              <Typography variant="h4">
+              <Typography variant="h5">
                 DNS Protection Summary Report
               </Typography>
               <Typography variant="h6">Single Org, Inc.</Typography>

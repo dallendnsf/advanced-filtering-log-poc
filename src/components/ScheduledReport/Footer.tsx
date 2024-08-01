@@ -16,11 +16,11 @@ export default function ScheduledReportFooter({ whiteLabel }: Props) {
       <Grid
         container
         alignItems="center"
-        sx={{ backgroundColor: "#FFF" }}
-        padding={theme.spacing(4)}
+        sx={{ backgroundColor: "#F6F8FC" }}
+        padding={theme.spacing(2)}
       >
         <Grid item xs={12}>
-          <Grid container alignItems="center" spacing={1}>
+          <Grid container alignItems="center" spacing={0}>
             <Grid item xs={12}>
               <Typography variant="h5" textAlign="center">
                 Powered By DNSFilter

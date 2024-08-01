@@ -20,10 +20,10 @@ export default function ScheduledReportContent({
         container
         alignItems="center"
         sx={{ backgroundColor: "#F6F8FC" }}
-        padding={theme.spacing(4)}
+        padding={theme.spacing(2)}
       >
         <Grid item xs={12}>
-          <Grid container alignItems="center" spacing={4}>
+          <Grid container alignItems="center" spacing={2}>
             <Grid item xs={12}>
               <ScheduledReportThreatSummaryCard topThreats={topThreats} />
             </Grid>

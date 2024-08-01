@@ -23,7 +23,7 @@ export default function AggregateCard({ aggregateType, requestCount }: Props) {
   const formattedRequestCount = AggregateNumberFormatter(requestCount);
 
   return (
-    <Grid container alignItems="center" spacing={2}>
+    <Grid container alignItems="center" spacing={2} justifyContent="center">
       <Grid item xs="auto">
         {content.icon}
       </Grid>
