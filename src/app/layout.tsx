@@ -17,7 +17,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import SupportIcon from "@mui/icons-material/Support";
 import LogoutIcon from "@mui/icons-material/Logout";
 import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry";
-import { RefreshOutlined } from "@mui/icons-material";
+import { AssessmentOutlined, RefreshOutlined } from "@mui/icons-material";
 
 export const metadata = {
   title: "Next.js App Router + Material UI v5",
@@ -30,6 +30,11 @@ const LINKS = [
   { text: "Adv Filtering Log", href: "/", icon: HomeIcon },
   { text: "Org Ignore List", href: "/org-ignore-list", icon: HomeIcon },
   { text: "Data Refresh", href: "/data-refresh", icon: RefreshOutlined },
+  {
+    text: "Scheduled Report",
+    href: "/scheduled-report",
+    icon: AssessmentOutlined,
+  },
 ];
 
 const PLACEHOLDER_LINKS = [
@@ -102,7 +107,7 @@ export default function RootLayout({
             component="main"
             sx={{
               flexGrow: 1,
-              bgcolor: "background.default",
+              bgcolor: "#fff",
               ml: `${DRAWER_WIDTH}px`,
               mt: ["48px", "56px", "64px"],
               p: 3,

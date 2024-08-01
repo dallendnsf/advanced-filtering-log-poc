@@ -1,0 +1,25 @@
+import { ITopCategories } from "@/types/top-categories";
+
+export const MONTH_TOP_CONTENT_CATEGORIES: ITopCategories[] = [
+  { category: "Business", total_requests: 11625336 },
+  { category: "Information Technology", total_requests: 11128180 },
+  { category: "Parked Sites & Domains", total_requests: 7335707 },
+  { category: "Adult Content", total_requests: 1423273 },
+  { category: "P2P & Illegal", total_requests: 732301 },
+  { category: "Education & Self Help", total_requests: 15175 },
+  { category: "Trackers", total_requests: 12289 },
+  { category: "Advertising", total_requests: 12010 },
+  { category: "Advertising Lite", total_requests: 12010 },
+  { category: "Trackers Lite", total_requests: 11906 },
+  { category: "Travel", total_requests: 959 },
+  { category: "Entertainment", total_requests: 668 },
+  { category: "Vehicles", total_requests: 429 },
+  { category: "Shopping", total_requests: 378 },
+  { category: "Games", total_requests: 332 },
+  { category: "Malicious Domain Protection", total_requests: 251 },
+  { category: "Health", total_requests: 191 },
+  { category: "Streaming Media", total_requests: 104 },
+  { category: "Gambling", total_requests: 52 },
+  { category: "Media Sharing", total_requests: 39 },
+  { category: "Weapons", total_requests: 26 },
+];

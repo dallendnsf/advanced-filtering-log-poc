@@ -3,6 +3,7 @@ import { Chip } from "@mui/material";
 import {
   GridCellParams,
   GridColDef,
+  GridColumnHeaderParams,
   GridFilterInputSingleSelect,
   GridFilterItem,
   GridRenderCellParams,
@@ -51,6 +52,8 @@ export const columns = [
   {
     field: "destination",
     headerName: "Destination",
+    description:
+      "A destination is a unique value based on what request was made (e.g. FQDN, URL, IPv4, IPv6). Full URL values will be represented as a combination of the domain and URL path without query parameters.",
     filterOperators: getCustomGridStringOperators(),
   },
   {
