@@ -29,7 +29,17 @@ export default function ScheduledReportContentSummaryCard({
           padding={theme.spacing(2)}
         >
           <Grid item xs={12}>
-            <Typography variant="h6">Blocked Content Requests</Typography>
+            <Typography variant="h5">Content Summary</Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="h6">
+              Blocked Requests By Content Category
+            </Typography>
+            <Typography variant="body1">
+              The blocked content count and the sum of the bar chart figures may
+              differ. Requests with more than one category may be represented
+              multiple times.
+            </Typography>
           </Grid>
           <Grid item xs={12}>
             <TopCategoryBarChart
@@ -41,7 +51,7 @@ export default function ScheduledReportContentSummaryCard({
             />
           </Grid>
           <Grid item xs={12}>
-            <Typography variant="h6">Blocked Content Domains</Typography>
+            <Typography variant="h6">Top 10 Blocked Content Domains</Typography>
           </Grid>
           <Grid item xs={12}>
             <TopDomainsGrid

@@ -143,6 +143,8 @@ export default function ScheduledReport({
           contentSummary={contentSummary}
           dataSpan={dataSpan}
           summaryData={summaryData}
+          networkSummary={networkSummary}
+          siteCount={topSites.length}
         />
         <ScheduledReportContent
           networkSummary={networkSummary}

@@ -15,9 +15,7 @@ export default function ActiveSiteSummary({ topSites, summaryData }: Props) {
     <>
       <Grid container alignItems="center" spacing={2}>
         <Grid item xs={12}>
-          <Typography variant="h6">
-            Top Active Sites ({topSites.length})
-          </Typography>
+          <Typography variant="h5">Top Active Sites</Typography>
         </Grid>
         {topSites.map((ts, index) => {
           if (index < 6) {

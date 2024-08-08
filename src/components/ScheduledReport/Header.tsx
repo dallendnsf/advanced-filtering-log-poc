@@ -52,7 +52,7 @@ export default function ScheduledReportHeader({ whiteLabel, dataSpan }: Props) {
               </Box>
             </Grid>
             <Grid item xs={6}>
-              <Typography variant="h5">
+              <Typography variant="h4">
                 DNS Protection Summary Report
               </Typography>
               <Typography variant="h6">Single Org, Inc.</Typography>

@@ -7,14 +7,18 @@ import { IRequestSummary } from "@/types/request-summary";
 type Props = {
   threatSummary: boolean;
   contentSummary: boolean;
+  networkSummary: boolean;
   dataSpan: DataSpan;
   summaryData: IRequestSummary;
+  siteCount: number;
 };
 
 export default function ScheduledReportAggregates({
   threatSummary,
   contentSummary,
+  networkSummary,
   summaryData,
+  siteCount,
 }: Props) {
   return (
     <Paper
@@ -44,6 +48,12 @@ export default function ScheduledReportAggregates({
               aggregateType="blocked_requests"
               requestCount={summaryData.content_blocked}
             />
+          </Grid>
+        )}
+
+        {networkSummary && (
+          <Grid item xs>
+            <AggregateCard aggregateType="sites" requestCount={siteCount} />
           </Grid>
         )}
       </Grid>

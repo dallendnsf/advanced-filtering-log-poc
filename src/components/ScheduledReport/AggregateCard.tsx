@@ -1,4 +1,8 @@
-import { DoDisturbOutlined, WifiTetheringOutlined } from "@mui/icons-material";
+import {
+  DoDisturbOutlined,
+  PlaceOutlined,
+  WifiTetheringOutlined,
+} from "@mui/icons-material";
 import Image from "next/image";
 import theme from "../ThemeRegistry/theme";
 import { Grid, Typography } from "@mui/material";
@@ -7,15 +11,16 @@ import { AggregateNumberFormatter } from "@/util/aggregate-number-formatter";
 export type AggregateType =
   | "total_requests"
   | "blocked_requests"
-  | "threat_requests";
+  | "threat_requests"
+  | "sites";
 
 type Props = {
   aggregateType: AggregateType;
   requestCount: number;
 };
 
-const ICON_WIDTH = 80;
-const ICON_HEIGHT = 80;
+const ICON_WIDTH = 48;
+const ICON_HEIGHT = 48;
 
 export default function AggregateCard({ aggregateType, requestCount }: Props) {
   const content = getAggregateContent(aggregateType);
@@ -29,7 +34,7 @@ export default function AggregateCard({ aggregateType, requestCount }: Props) {
       </Grid>
       <Grid item>
         <Typography
-          variant="h4"
+          variant="h5"
           fontWeight="bold"
           sx={{ color: content.color }}
         >
@@ -55,7 +60,7 @@ function getAggregateContent(aggregateType: AggregateType) {
           />
         ),
         color: theme.palette.primary.main,
-        label: "Total Requests Received",
+        label: "Total Requests",
       };
 
     case "threat_requests":
@@ -69,7 +74,7 @@ function getAggregateContent(aggregateType: AggregateType) {
           />
         ),
         color: theme.palette.secondary.main,
-        label: "Threats We Blocked",
+        label: "Blocked Threats",
       };
 
     case "blocked_requests":
@@ -84,7 +89,22 @@ function getAggregateContent(aggregateType: AggregateType) {
           />
         ),
         color: theme.palette.common.black,
-        label: "Content Requests We Blocked",
+        label: "Blocked Content",
+      };
+
+    case "sites":
+      return {
+        icon: (
+          <PlaceOutlined
+            sx={{
+              width: ICON_WIDTH,
+              height: ICON_HEIGHT,
+              color: "#238cd2",
+            }}
+          />
+        ),
+        color: "#238cd2",
+        label: "Total Sites",
       };
   }
 }

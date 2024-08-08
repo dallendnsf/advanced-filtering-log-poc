@@ -29,7 +29,17 @@ export default function ScheduledReportThreatSummaryCard({
           padding={theme.spacing(2)}
         >
           <Grid item xs={12}>
-            <Typography variant="h6">Blocked Threat Requests</Typography>
+            <Typography variant="h5">Threat Summary</Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="h6">
+              Blocked Requests By Threat Category
+            </Typography>
+            <Typography variant="body1">
+              The blocked threats count and the sum of the bar chart figures may
+              differ. Requests with more than one category may be represented
+              multiple times.
+            </Typography>
           </Grid>
           <Grid item xs={12}>
             <TopCategoryBarChart
@@ -41,7 +51,7 @@ export default function ScheduledReportThreatSummaryCard({
             />
           </Grid>
           <Grid item xs={12}>
-            <Typography variant="h6">Blocked Threat Domains</Typography>
+            <Typography variant="h6">Top 10 Blocked Threat Domains</Typography>
           </Grid>
           <Grid item xs={12}>
             <TopDomainsGrid
