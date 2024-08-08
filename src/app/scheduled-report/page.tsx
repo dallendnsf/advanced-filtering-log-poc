@@ -21,6 +21,7 @@ import {
 } from "@/components/ScheduledReport/ScheduledReport";
 
 export default function HomePage() {
+  const [networkSummary, setNetworkSummary] = React.useState(true);
   const [threatSummary, setThreatSummary] = React.useState(true);
   const [contentSummary, setContentSummary] = React.useState(true);
   const [contentQuantity, setContentQuantity] = React.useState("all");
@@ -42,6 +43,20 @@ export default function HomePage() {
               ></Switch>
             }
             label="White Label"
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <FormControlLabel
+            control={
+              <Switch
+                checked={networkSummary}
+                inputProps={{ "aria-label": "controlled" }}
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                  setNetworkSummary(event.target.checked);
+                }}
+              ></Switch>
+            }
+            label="Include Network Summary"
           />
         </Grid>
         <Grid item xs={12}>
@@ -165,6 +180,7 @@ export default function HomePage() {
           >
             <ScheduledReport
               whiteLabel={whiteLabel}
+              networkSummary={networkSummary}
               threatSummary={threatSummary}
               contentSummary={contentSummary}
               contentQuantity={contentQuantity as ContentQuantity}

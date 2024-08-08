@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Bar,
   BarChart,
@@ -32,6 +34,7 @@ const TopCategoryBarChart: React.FC<TopCategoryBarChartModel> = ({
       width="100%"
       height="100%"
       minWidth={100}
+      maxHeight={minHeight}
       minHeight={minHeight}
     >
       <BarChart

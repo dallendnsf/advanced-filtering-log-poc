@@ -1,45 +1,55 @@
 "use client";
 import Grid from "@mui/material/Grid";
 import theme from "../ThemeRegistry/theme";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  Paper,
-  Typography,
-} from "@mui/material";
+import { Card, CardContent, Typography } from "@mui/material";
 import TopCategoryBarChart from "./Charts/TopCategoryBarChart";
 import { ITopCategories } from "@/types/top-categories";
+import { ITopDomains } from "@/types/top-domains";
+import TopDomainsGrid from "./Grids/TopDomainsGrid";
+import { IRequestSummary } from "@/types/request-summary";
 
 type Props = {
   topThreats: ITopCategories[];
+  topThreatDomains: ITopDomains[];
+  summaryData: IRequestSummary;
 };
 
 export default function ScheduledReportThreatSummaryCard({
   topThreats,
+  topThreatDomains,
+  summaryData,
 }: Props) {
   return (
     <>
       <Card>
-        <CardContent>
-          <Typography variant="h6">Blocked Threat Requests</Typography>
-          <Grid
-            container
-            alignItems="center"
-            spacing={2}
-            padding={theme.spacing(2)}
-          >
-            <Grid item xs={12}>
-              <TopCategoryBarChart
-                data={topThreats}
-                xDataKey="category"
-                seriesDataKey="total_requests"
-                layout="vertical"
-                seriesColors={[theme.palette.secondary.main]}
-              />
-            </Grid>
+        <Grid
+          container
+          alignItems="center"
+          spacing={3}
+          padding={theme.spacing(2)}
+        >
+          <Grid item xs={12}>
+            <Typography variant="h6">Blocked Threat Requests</Typography>
           </Grid>
-        </CardContent>
+          <Grid item xs={12}>
+            <TopCategoryBarChart
+              data={topThreats}
+              xDataKey="category"
+              seriesDataKey="total_requests"
+              layout="vertical"
+              seriesColors={[theme.palette.secondary.main]}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="h6">Blocked Threat Domains</Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <TopDomainsGrid
+              data={topThreatDomains}
+              denominator={summaryData.threats_blocked}
+            />
+          </Grid>
+        </Grid>
       </Card>
     </>
   );

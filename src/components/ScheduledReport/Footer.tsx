@@ -22,7 +22,7 @@ export default function ScheduledReportFooter({ whiteLabel }: Props) {
         <Grid item xs={12}>
           <Grid container alignItems="center" spacing={0}>
             <Grid item xs={12}>
-              <Typography variant="h5" textAlign="center">
+              <Typography variant="h6" textAlign="center">
                 Powered By DNSFilter
               </Typography>
             </Grid>
